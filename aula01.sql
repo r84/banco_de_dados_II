@@ -27,19 +27,46 @@ AS
 USE aula01;
 
 SELECT
-    "Create table alunos"
+    "Create table students"
 AS
     "INFO";
 
-DROP TABLE IF EXISTS alunos;
+DROP TABLE IF EXISTS students;
 
-CREATE TABLE alunos(
-    id_aluuno           INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE students(
+    id_students         INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     first_name          VARCHAR(255),
     last_name           VARCHAR(255),
     gender              ENUM('MA','FE'),
-    code_registration   INTEGER,
-    created_at          DATETIME DEFAULT NOW()
+    code_registration   INTEGER UNIQUE,
+    created_at          DATETIME DEFAULT NOW(),
+    deleted_at          DATETIME
 );
 
-DESCRIBE alunos;
+DESCRIBE students;
+
+INSERT INTO students(
+    first_name,
+    last_name,
+    gender,
+    code_registration
+)
+    VALUES
+(
+    'Raphael',
+    'Stanula',
+    'MA',
+    1
+),
+(
+    'Silvio',
+    'Santos',
+    'MA',
+    2
+),
+(
+    'Hebe',
+    'Camargo',
+    'FE',
+    3
+);
