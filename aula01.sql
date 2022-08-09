@@ -70,3 +70,33 @@ INSERT INTO students(
     'FE',
     3
 );
+
+SELECT * FROM students;
+
+
+-- Segunda aula (08/08/2022)
+
+SELECT  
+    "Select especific columns - version II"
+AS
+    "INFO"
+
+SELECT
+    students.first_name,
+    students.last_name,
+    students.gender
+FROM
+    students;
+
+
+SELECT  
+    "Select especific columns - version III"
+AS
+    "INFO"
+
+SELECT
+    aula01.students.first_name,
+    aula01.students.last_name,
+    aula01.students.gender
+FROM
+    students;
