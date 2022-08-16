@@ -68,8 +68,7 @@ AND
 (film.language_id IN(1,5))
 AND 
 (film.rating IN ('G','R','NC-17'))
-LIMIT 80
-;
+LIMIT 80;
 
 ---------------------------------------
 
